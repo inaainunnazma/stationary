@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STATIONARY — Flashcards · Crossword · Word Search</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>STATIONARY</h1>
+    <p class="sub">🎨 Tap the card to hear it · 🧩 Play the games!</p>
+    <nav class="tabs">
+      <button class="tab active" data-tab="slides">📚 Flashcards</button>
+      <button class="tab" data-tab="game">🧩 Crossword</button>
+      <button class="tab" data-tab="search">🔍 Word Search</button>
+    </nav>
+  </header>
+
+  <!-- ================= FLASHCARDS ================= -->
+  <section id="slides" class="panel active">
+    <p class="tap-hint">👆 Tap / click the card to hear the word!</p>
+
+    <div class="flash-area">
+      <button class="nav-arrow" id="prevBtn" aria-label="Previous">◀</button>
+
+      <div class="flashcard" id="flashcard" tabindex="0">
+        <div class="card-face" id="cardFront">
+          <div class="card-img" id="slideImg"></div>
+          <h2 class="card-word" id="slideWord">—</h2>
+          <p class="card-hint" id="slideHint">—</p>
+          <span class="speaker-badge">🔊 tap to hear</span>
+        </div>
+      </div>
+
+      <button class="nav-arrow" id="nextBtn" aria-label="Next">▶</button>
+    </div>
+
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- ================= CROSSWORD ================= -->
+  <section id="game" class="panel">
+    <div class="game-wrap">
+      <div class="grid-box">
+        <div id="crosswordGrid" class="cw-grid"></div>
+      </div>
+
+      <div class="clues">
+        <h3>🧩 Crossword</h3>
+        <div class="clue-cols">
+          <div>
+            <h4>Across ➡️</h4>
+            <ul id="acrossList"></ul>
+          </div>
+          <div>
+            <h4>Down ⬇️</h4>
+            <ul id="downList"></ul>
+          </div>
+        </div>
+
+        <div class="game-actions">
+          <button id="checkBtn">✅ Check</button>
+          <button id="clearBtn">🧽 Clear</button>
+          <button id="newBtn">🔄 New Puzzle</button>
+        </div>
+        <p id="gameMsg" class="msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORD SEARCH ================= -->
+  <section id="search" class="panel">
+    <div class="search-wrap">
+      <div class="search-grid-box">
+        <div id="searchGrid" class="ws-grid"></div>
+        <p class="ws-tip">💡 Drag from the first letter to the last letter. Words can go in 8 directions (even backwards!).</p>
+      </div>
+
+      <div class="search-side">
+        <h3>🔍 Word Search</h3>
+        <p class="ws-status">
+          Found: <span id="wsFoundCount">0</span>/<span id="wsTotalCount">12</span>
+          · ⏱️ <span id="wsTimer">00:00</span>
+        </p>
+        <ul id="wsWordList" class="ws-word-list"></ul>
+
+        <div class="game-actions">
+          <button id="wsNewBtn">🔄 New Puzzle</button>
+          <button id="wsHintBtn">💡 Hint</button>
+        </div>
+        <p id="wsMsg" class="msg"></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
